@@ -7,12 +7,12 @@ A reproducible variant-calling workflow on simulated SARS-CoV-2 reads: quality c
 1. **Quality control and trimming:** fastp
 2. **Alignment to the reference:** BWA
 3. **Sorting and indexing:** samtools
-4. **Variant calling and filtering:** bcftools (filter: QUAL >= 30 and DP >= 10)
+4. **Variant calling and filtering:** bcftools, haploid calling (filter: QUAL >= 30 and DP >= 10)
 5. **Summary and plots:** Python (biopython, pandas, matplotlib, pysam)
 
 ## Results
 
-On simulated reads (wgsim, 1% mutation rate), **327 variants** were retained after filtering: **281 SNPs** and **46 indels**. The filtered VCF is in `work/`, with plots of read quality and variant density.
+On simulated reads (wgsim haplotype mode, 1% mutation rate), **319 variants** were retained after filtering: **260 SNPs** and **59 indels**. The filtered VCF is in `work/`, with plots of read quality and variant density.
 
 ## Installation
 
