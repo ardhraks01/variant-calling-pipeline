@@ -4,3 +4,4 @@
 __pycache__/
 work/variants.vcf.gz
 work/variants.vcf.gz.csi
+work/trim_R*.fq.gz
