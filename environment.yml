@@ -1,0 +1,19 @@
+name: varpipe
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bwa
+  - python=3.11
+  - fastp
+  - matplotlib
+  - samtools
+  - bcftools
+  - pysam
+  - biopython
+  - pandas
+  - fastqc=0.12.1
+  - wgsim
+  - gh
+prefix: /home/ardhr/miniconda3/envs/varpipe

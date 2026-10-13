@@ -1,0 +1,6 @@
+*.bam
+*.bai
+*.sam
+__pycache__/
+work/variants.vcf.gz
+work/variants.vcf.gz.csi
