@@ -1,14 +1,20 @@
 # Data
 
-All test data comes from the nf-core test-datasets repository (SARS-CoV-2, `modules` branch):
-https://github.com/nf-core/test-datasets/tree/modules/data/genomics/sarscov2
+The pipeline runs on **simulated** Illumina reads generated from a real reference genome.
 
-- Reference genome: genome/genome.fasta (saved as ref/genome.fa)
-- Gene annotation: genome/genome.gff3
-- Reads: illumina/fastq/test_1.fastq.gz and test_2.fastq.gz (saved as data/sample_R1.fastq.gz and data/sample_R2.fastq.gz)
+## Reference (from nf-core test-datasets, SARS-CoV-2)
+https://github.com/nf-core/test-datasets/tree/modules/data/genomics/sarscov2/genome
 
-Download:
 wget -q https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/sarscov2/genome/genome.fasta -O ref/genome.fa
 wget -q https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/sarscov2/genome/genome.gff3 -O ref/genome.gff3
-wget -q https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/sarscov2/illumina/fastq/test_1.fastq.gz -O data/sample_R1.fastq.gz
-wget -q https://raw.githubusercontent.com/nf-core/test-datasets/modules/data/genomics/sarscov2/illumina/fastq/test_2.fastq.gz -O data/sample_R2.fastq.gz
+
+## Simulated reads (wgsim)
+30,000 paired-end reads (2 x 150 bp), 1% mutation rate, random seed 42:
+
+wgsim -S 42 -N 30000 -1 150 -2 150 -r 0.01 ref/genome.fa data/sim_R1.fq data/sim_R2.fq
+gzip data/sim_R1.fq data/sim_R2.fq
+
+Because the reads are simulated, the variants called are simulated mutations, not real biological variants.
+
+## Not used by the pipeline
+sample_R1.fastq.gz and sample_R2.fastq.gz are the small real nf-core test reads (test_1/test_2.fastq.gz). They were downloaded but are not used in the pipeline run.

@@ -1,6 +1,6 @@
 # Variant Calling Pipeline
 
-A reproducible variant-calling workflow on a small SARS-CoV-2 test dataset: quality control, trimming, alignment, variant calling, filtering and variant summary, run in WSL2 Ubuntu with a conda environment.
+A reproducible variant-calling workflow on simulated SARS-CoV-2 reads: quality control, trimming, alignment, variant calling, filtering and variant summary, run in WSL2 Ubuntu with a conda environment.
 
 ## Workflow
 1. **Quality control and trimming:** fastp
@@ -10,7 +10,7 @@ A reproducible variant-calling workflow on a small SARS-CoV-2 test dataset: qual
 5. **Summary and plots:** Python (biopython, pandas, matplotlib, pysam)
 
 ## Results
-After filtering, **327 variants** were retained: **281 SNPs** and **46 indels**.
+On simulated reads (wgsim, 1% mutation rate), **327 variants** were retained after filtering: **281 SNPs** and **46 indels**.
 The filtered VCF is in `work/`, with plots of read quality and variant density.
 
 ## Installation
